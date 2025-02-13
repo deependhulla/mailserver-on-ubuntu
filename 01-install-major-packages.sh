@@ -17,7 +17,7 @@ dirmngr parted gdisk apt-transport-https lsb-release ca-certificates iputils-pin
 python3-full debconf-utils pwgen xfsprogs iftop htop multitail net-tools elinks pssh apache2 \
 python3-pylint-common pylint iptables-persistent build-essential gnupg2 zip rar unrar ftp php rsync unzip \
 python3-pip libimage-exiftool-perl poppler-utils tnef whois libauthen-pam-perl php-zip \
-libio-pty-perl libnet-ssleay-perl libnginx-mod-mail lynx lynx-common perl-openssl-defaults mariadb-server \
+libio-pty-perl libnet-ssleay-perl libnginx-mod-mail lynx lynx-common perl-openssl-defaults mysql-server \
 libapache2-mod-php php-mysql php-cli php-common php-imap php-ldap php-xml phpmyadmin tar \
 dovecot-dev git libxapian-dev libicu-dev libsqlite3-dev autoconf automake libtool pkg-config \
 php-curl php-mbstring php-zip php-apcu php-gd php-imagick imagemagick mcrypt \
@@ -96,10 +96,10 @@ systemctl disable php-fpm > /dev/null 2>&1
 ### changing timezone to Asia Kolkata
 sed -i "s/;date.timezone =/date\.timezone \= \'Asia\/Kolkata\'/" /etc/php/8.3/apache2/php.ini
 sed -i "s/;date.timezone =/date\.timezone \= \'Asia\/Kolkata\'/" /etc/php/8.3/cli/php.ini
-sed -i "s/;date.timezone =/date\.timezone \= \'Asia\/Kolkata\'/" /etc/php/8.3/fpm/php.ini
+#sed -i "s/;date.timezone =/date\.timezone \= \'Asia\/Kolkata\'/" /etc/php/8.3/fpm/php.ini
 ##disable error
 sed -i "s/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ERROR/" /etc/php/8.3/cli/php.ini
-sed -i "s/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ERROR/" /etc/php/8.3/fpm/php.ini
+#sed -i "s/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ERROR/" /etc/php/8.3/fpm/php.ini
 sed -i "s/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ERROR/" /etc/php/8.3/apache2/php.ini
 
 sed -i "s/memory_limit = 128M/memory_limit = 512M/" /etc/php/8.3/apache2/php.ini
@@ -163,7 +163,7 @@ systemctl restart  rsyslog
 systemctl stop nginx
 systemctl restart  apache2
 systemctl restart  cron
-systemctl restart  mariadb
+systemctl restart  mysql
 
 touch /var/log/dovecot.log
 chmod 666 /var/log/dovecot.log

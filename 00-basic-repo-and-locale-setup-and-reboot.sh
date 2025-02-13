@@ -23,7 +23,6 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1 1>/dev/null
 ## backup existing repo by copy just for safety
 mkdir -p /opt/old-config-backup/ 2>/dev/null
 
-apt update
 
 ## centos like bash ..for all inteactive 
 echo "" >> /etc/bash.bashrc
@@ -100,3 +99,5 @@ hostname -f
 ping `hostname -f` -c 2
 
 
+apt-get update
+apt-get -y full-upgrade
