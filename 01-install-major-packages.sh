@@ -22,7 +22,7 @@ libapache2-mod-php php-mysql php-cli php-common php-imap php-ldap php-xml phpmya
 dovecot-dev git libxapian-dev libicu-dev libsqlite3-dev autoconf automake libtool pkg-config \
 php-curl php-mbstring php-zip php-apcu php-gd php-imagick imagemagick mcrypt \
 python3-venv memcached php-memcached php-bcmath dbconfig-common libapache2-mod-php php-intl \
-php-mysql php-intl libdbd-mysql-perl certbot python3-certbot-apache automysqlbackup \
+php-mysql pv php-intl libdbd-mysql-perl certbot python3-certbot-apache automysqlbackup \
 php-mailparse perl-doc mysqltuner catdoc imagemagick tesseract-ocr tesseract-ocr-eng \
 poppler-utils exiv2 libnet-dns-perl libmailtools-perl php-mail-mime postfix-mysql \
 isort dovecot-mysql dovecot-sieve dovecot-managesieved dovecot-imapd dovecot-pop3d \
@@ -33,7 +33,7 @@ libnet-patricia-perl antiword libbsd-resource-perl libencoding-fixlatin-perl \
 libconfig-yaml-perl libnet-ldap-perl libconvert-asn1-perl libbusiness-isbn-perl \
 python3-pycodestyle pycodestyle libencoding-fixlatin-xs-perl liburi-encode-perl \
 libtest-leaktrace-perl libdb5.3-dev nomarch libtest-leaktrace-perl \
-libsort-naturally-perl libfile-which-perl  libfile-homedir-perl \
+default-mysql-server php-json libsort-naturally-perl libfile-which-perl  libfile-homedir-perl \
 libfile-homedir-perl libfile-which-perl libpath-class-perl libany-uri-escape-perl \
 python3-pytest libcpan-changes-perl libcpan-distnameinfo-perl \
 libcpan-meta-check-perl libdata-perl-perl libdata-section-perl \

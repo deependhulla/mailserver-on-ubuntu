@@ -8,7 +8,19 @@ MYSQLPASSVPOP=`pwgen -c -1 8`
 echo $MYSQLPASSVPOP > /usr/local/src/mysql-mydbadmin-pass
 echo "mydbadmin password in /usr/local/src/mysql-mydbadmin-pass"
 
-echo "GRANT ALL PRIVILEGES ON *.* TO mydbadmin@localhost IDENTIFIED BY '$MYSQLPASSVPOP'" with grant option | mysql -uroot
+## for mariadb -
+##echo "GRANT ALL PRIVILEGES ON *.* TO mydbadmin@localhost IDENTIFIED BY '$MYSQLPASSVPOP'" with grant option | mysql -uroot
+
+## for mysql 8+ 
+#In MySQL 8.0 and later, the GRANT statement no longer implicitly creates a user if the user does not exist. You need to explicitly create the user first using the CREATE USER statement, and then grant privileges.
+
+echo "CREATE USER 'mydbadmin'@'localhost' IDENTIFIED BY '$MYSQLPASSVPOP';" | mysql -uroot
+echo "GRANT ALL PRIVILEGES ON *.* TO 'mydbadmin'@'localhost' WITH GRANT OPTION;" | mysql -uroot
+echo "FLUSH PRIVILEGES;" | mysql -uroot
+
+
+
+
 mysqladmin -uroot reload
 mysqladmin -uroot refresh
 

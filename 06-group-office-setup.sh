@@ -6,7 +6,7 @@ chown -R www-data:www-data /home/groupoffice/
 
 echo "Downloading Latest GroupOffice "
 echo "deb http://repo.group-office.com/ sixeight main" > /etc/apt/sources.list.d/groupoffice.list
-wget -qO - https://repo.group-office.com/downloads/groupoffice.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/groupoffice.gpg
+wget -qO - https://repo.group-office.com/downloads/groupoffice.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/groupoffice.gpg --import-ownertrust
 
 #for purchased Group-Office Professional licenses then make sure the SourceGuardian loader is installed. You can run this command to do all the work:
 curl -s https://raw.githubusercontent.com/Intermesh/groupoffice/master/scripts/sg_install.sh | bash
