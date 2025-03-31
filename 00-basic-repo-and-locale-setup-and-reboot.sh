@@ -1,5 +1,8 @@
 #!/bin/sh
 
+
+apt-get update
+apt-get -y install locales
 # for Debian 12
 ## set to India IST timezone -- You can dissable it if needed
 timedatectl set-timezone 'Asia/Kolkata'
